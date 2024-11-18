@@ -1,13 +1,12 @@
-require('dotenv').config()
-
 import app from './app'
+// require('dotenv').config()
+import dotenv from 'dotenv'
+dotenv.config()
 import userService from './src/services/user.service'
+app.set('port', process.env.PORT)
 
-
-const server = app.listen(process.env.PORT, () => {
-  console.log("server is running");
-  
-  // console.log(`Express running → PORT ${server.address().port}`.rainbow)
+const server = app.listen(app.get('port'), () => {
+  console.log(`Express running → PORT ${server.address().port}`.rainbow)
 })
 
 // handle socket io
