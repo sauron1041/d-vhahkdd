@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 import express from 'express'
 import session from 'express-session'
 import path from 'path'
@@ -12,7 +14,6 @@ import configRoutes from './src/routes/index'
 import handleException from './src/middleware/handleException.middleware'
 import cron from 'node-cron'
 import exec from 'child_process'
-require('dotenv').config()
 
 const app = express()
 
