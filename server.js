@@ -1,9 +1,8 @@
-import app from './app'
 require('dotenv').config()
+import app from './app'
 import userService from './src/services/user.service'
-app.set('port', process.env.PORT)
 
-const PORT = process.env.PORT || 10000
+const PORT = process.env.PORT
 
 const server = app.listen(PORT, () => {
   console.log(`Express running → PORT ${server.address().port}`.rainbow)
